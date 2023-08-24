@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script src="script.js"></script> 
+
+</head>
+<body>
+    <script>
+        let arr = ["rock","paper","scissors"]
+
+        function getComputerChoice () {
+            return (arr[Math.floor(Math.random()*3)])
+        }
+
+
+       
+
+        function playRound(playerSelection,computerSelection) {
+            if (playerSelection === "rock" && computerSelection === "scissors") {
+                return("You win! Rock Beats Scissors!");
+            } else if (playerSelection === "rock" && computerSelection === "rock") {
+                return("Tie!");
+            } else if (playerSelection === "rock" && computerSelection ==="paper") {
+                return("You Lose! Paper beats Rock!");
+            } else if (playerSelection === "paper" && computerSelection ==="paper") {
+                return("Tie!");
+            } else if (playerSelection === "paper" && computerSelection ==="rock") {
+                return("You Win! Paper beats Rock!");
+            } else if (playerSelection === "paper" && computerSelection ==="scissors") {
+                return("You Lose! Scissors beats Paper!");
+            } else if (playerSelection === "scissors" && computerSelection ==="paper") {
+                return("You Win! Scissors beats Paper!");
+            } else if (playerSelection === "scissors" && computerSelection ==="scissors") {
+                return("Tie");
+            } else if (playerSelection === "scissors" && computerSelection ==="rock") {
+                return("You Lose! Rock beats Scissors!");
+            }
+        }
+
+
+        let playerSelectionInitial = prompt("Type Rock Paper or Scissors","");
+        let playerSelection =playerSelectionInitial.toLowerCase();
+        let computerSelection = getComputerChoice();
+
+        let result = playRound(playerSelection,computerSelection)
+        console.log(result)
+
+    </script>
+    
+</body>
+</html>
