@@ -44,8 +44,8 @@
 
     
     function game() {
-        while (playerScore < 5 && computerScore < 5){
-        let playerSelectionInitial = prompt("Type Rock Paper or Scissors","");
+        for (let round = 1; round <= 5; round++) {
+        let playerSelectionInitial = prompt("Round" + round + ": Type Rock Paper or Scissors","");
         let playerSelection =playerSelectionInitial.toLowerCase();
         let computerSelection = getComputerChoice();
 
@@ -58,13 +58,15 @@
             computerScore++ ;
         }
 
-        console.log("Player Score:", playerScore, "Computer Score:", computerScore)
+        console.log("Round:", round,"Player Score:", playerScore, "Computer Score:", computerScore)
         
     }
-         if (playerScore === 5) {
+         if (playerScore > computerScore) {
             alert("You Win");
-        } else if(computerScore === 5) {
+        } else if(computerScore > playerScore) {
             alert("Computer Wins");
+        } else {
+            alert("It's a tie!");
         }
     }
 
